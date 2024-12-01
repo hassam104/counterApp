@@ -17,7 +17,16 @@ export default function Index() {
   };
 
   return (
-    <View>
+    <View style={{ marginTop: 175 }}>
+      <Text
+        style={{
+          marginLeft: 140,
+          fontSize: 25,
+          marginBottom: 35,
+        }}
+      >
+        Count: {count}
+      </Text>
       <Button onPress={increment} title="increment" color="blue" />
       <Button onPress={decrement} title="decrement" color="red" />
       <Button onPress={reset} title="reset" color="green" />
