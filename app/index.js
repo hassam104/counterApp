@@ -1,34 +1,26 @@
-import { StyleSheet, Text, View } from "react-native";
+import { View, Button, Text } from "react-native";
+import React, { useState } from "react";
 
-export default function Page() {
+export default function Index() {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  const decrement = () => {
+    setCount(count - 1);
+  };
+
+  const reset = () => {
+    setCount(0);
+  };
+
   return (
-    <View style={styles.container}>
-      <View style={styles.main}>
-        <Text style={styles.title}>WELCOME</Text>
-        <Text style={styles.subtitle}>This is Hassam Era.</Text>
-      </View>
+    <View>
+      <Button onPress={increment} title="increment" color="blue" />
+      <Button onPress={decrement} title="decrement" color="red" />
+      <Button onPress={reset} title="reset" color="green" />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    padding: 24,
-  },
-  main: {
-    flex: 1,
-    justifyContent: "center",
-    maxWidth: 960,
-    marginHorizontal: "auto",
-  },
-  title: {
-    fontSize: 64,
-    fontWeight: "bold",
-  },
-  subtitle: {
-    fontSize: 36,
-    color: "#38434D",
-  },
-});
